@@ -1,0 +1,16 @@
+MODULE main
+     VAR
+        S1 : boolean;
+        S2 : boolean;
+    ASSIGN
+        init(S1) :=FALSE;
+        init(S2) :=TRUE;
+        next(S1):= case
+            S1 = TRUE :TRUE;
+            !S1 & S2  :TRUE;
+            !S1 & !S2 :FALSE;
+            esac;
+SPEC 
+    EF(S1)
+SPEC
+    EG(S1)

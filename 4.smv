@@ -1,0 +1,14 @@
+MODULE main
+    VAR S1 :boolean;
+    
+    ASSIGN
+        init(S1) := TRUE;
+        next(S1):=
+            case
+                S1 :FALSE;
+                !S1:FALSE;
+            esac;
+SPEC
+    EF(!S1)
+SPEC
+    !(AF(S1))

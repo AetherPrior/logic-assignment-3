@@ -1,0 +1,28 @@
+1. EF∅ and EG∅
+=============================
+Formulae EF∅ and EG∅ are not equivalent. A counterexample model is specified in the file '1.smv' . 
+Description of the model : The variable S1 is the formula ∅ and S2 is a dummy variable. ∅ is false in the 1st state and ∅ is true in the 2nd state, EG∅ is FALSE, but EF∅ is TRUE.
+The second state transitions to itself.
+
+2. EF ∅ V EF 𝜑 and EF (∅V𝜑)
+=============================
+Let us start with the LHS, which says that there exists a path such that ∅ is eventually true OR that there exists a path such that 𝜑 is eventually true ( eventually includes the current state ). This also means that  ∅ OR 𝜑 is true eventually in the said path. This translates to the fact that there exists a path wherein ∅ OR 𝜑 is true eventually, which yields our RHS.
+Now let us start with RHS, which says that there exists a path such that ∅ OR 𝜑 is true eventually. This means that eventually ∅ is true OR eventually 𝜑 is true. This translates to the fact that there exists a path such that ∅ is eventually true OR that there exists a path such that 𝜑 is eventually true , which is our LHS.
+Thus the pair of CTL formulae are equivalent
+
+3. AF∅VAF𝜑 and AF(∅V𝜑)
+=============================
+The pair of formulae are not equivalent, as shown by the counterexample model in file '3.smv'
+Description of the model : The variable S1 is an enum of three formulae one, two, and three.
+one is a dummy formula. two is ∅ and three is 𝜑.
+In the initial state, the formula one holds.
+The next states involve one of them having two to hold, and one having three to hold.
+the initial state can transition to either of these two states. 
+These two states transition to themselves.
+
+4. EF~∅ and ~AF∅
+=============================
+The pair of formulae are NOT  equivalent, as shown by the counterexample model in file '4.smv'.
+Description of model : The variable S1 is ∅. 
+∅ is true in the first state and is false in the second state. 
+The second state transitions to itself.

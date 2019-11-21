@@ -1,0 +1,17 @@
+MODULE main
+    VAR 
+        S1  :{one,two, three};
+
+    ASSIGN
+        init(S1)    :={one};
+        next(S1):=
+            case
+                S1 = one : {two, three};
+                S1 = two : two;
+                S1 = three : three;
+            esac;
+
+SPEC
+    AF(S1 = two) | AF(S1 = three);
+SPEC 
+    AF(S1 = two | S1 = three);
