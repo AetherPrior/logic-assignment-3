@@ -1,0 +1,14 @@
+1.
+========================================
+A model does exist and it's given in the file All.smv.
+p and q are two propositional atoms, initialized to FALSE.
+In the next state p becomes TRUE and q remains as FALSE.
+In the state after, p remains as true and q becomes true. This state transitions to itself.
+========================================
+
+2.
+========================================
+A model does exist and it's given in the file None.smv.
+p and q are two propositional atoms, p initialized to TRUE, and q initialized to FALSE.
+The initial state transitions to itself.
+========================================

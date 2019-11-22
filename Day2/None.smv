@@ -1,0 +1,21 @@
+MODULE main
+    VAR
+        p   :boolean;
+        q   :boolean;
+    ASSIGN
+        init(p)   :=TRUE;
+        init(q)   :=FALSE;
+        next(p):=
+        case
+            p | !p :TRUE;
+        esac;
+        next(q):=
+        case
+            q | !q :FALSE;
+        esac;
+    LTLSPEC
+        F p -> F q;
+    CTLSPEC
+        AF p -> AF q;
+    CTLSPEC
+        AG(p -> AF q);
